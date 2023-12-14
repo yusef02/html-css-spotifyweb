@@ -1,3 +1,15 @@
+:root {
+  --base-size: 15px;
+  --s-size: 20px;
+  --m-size: 30px;
+  --l-size: 50px;
+  --xl-size: 70px;
+  --xxl-size: 100px;
+  --xxl-size: 120px;
+
+  --fixed-sections-height: 100px;
+}
+
 /* RESET */
 * {
   margin: 0;
@@ -9,4 +21,67 @@
 .debug,
 .debug * {
   border: 1px dashed salmon;
+  /* min-height: 100px; */
+}
+
+/****** WINDOW APP *******/
+
+.windowApp {
+  background-color: #141922;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+/******* NAVBAR SIDE *******/
+
+#navbar {
+  background-color: #000000;
+  width: 15%;
+  height: calc(100% - var(--fixed-sections-height));
+  padding: var(--s-size);
+  display: flex;
+  flex-direction: column;
+}
+#navbar .navbar__playlist {
+  flex-grow: 1;
+}
+
+/******* MAIN *******/
+
+#main {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+}
+
+/******* MAIN HEADER *******/
+
+#notifications {
+  background-color: rgba(0, 0, 0);
+  filter: opacity(0.5);
+  width: 100%;
+  height: var(--fixed-sections-height);
+
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+/******* MAIN CONTENT*******/
+
+#mainContent {
+  padding-top: var(--fixed-sections-height);
+  width: 100%;
+  height: calc(100% - var(--fixed-sections-height));
+  overflow: auto;
+}
+
+/******* NAV PLAYER *******/
+#player {
+  background-color: #282828;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: var(--fixed-sections-height);
 }
