@@ -9,15 +9,96 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <div class="windowApp debug">
+    <div class="windowApp">
+      <!-- NAVBAR SIDE -->
       <nav id="navbar">
-        <div class="navbar__logo">logo</div>
+        <!-- navbar logo -->
+        <a href="#" class="navbar__logo block">
+          <img src="./assets/img/logo.svg" alt="logo" class="logo" />
+        </a>
+
+        <!-- navbar link to -->
         <div class="navbar__linkTo">
-          home <br />
-          library
+          <a href="#" class="navbar__linkTo__home block">
+            <img
+              src="./assets/img/home.svg"
+              alt="home-icon"
+              class="navbar__icon" /><span>Home</span>
+          </a>
+          <a href="#" class="navbar__linkTo__search block">
+            <img
+              src="./assets/img/search.svg"
+              alt="search-icon"
+              class="navbar__icon" /><span>Cerca</span>
+          </a>
+          <a href="#" class="navbar__linkTo__library block">
+            <img
+              src="./assets/img/libreria.svg"
+              alt="library-icon"
+              class="navbar__icon" /><span>La tua libreria</span>
+          </a>
         </div>
-        <div class="navbar__playlist">add new playlist</div>
-        <div class="navbar__user">username</div>
+
+        <!-- navbar playlist -->
+        <div class="navbar__playlist">
+          <h2 class="navbar__playlist__title">PLAYLIST</h2>
+          <a href="#" class="navbar__playlist__createPlaylist block">
+            <span>Crea Playlist</span>
+          </a>
+          <ul class="navbar__playlist__list">
+            <li>
+              <a href="#" class="navbar__playlist__playlistName"
+                >Nome Playlist</a
+              >
+            </li>
+            <li>
+              <a href="#" class="navbar__playlist__playlistName"
+                >Nome Playlist</a
+              >
+            </li>
+            <li>
+              <a href="#" class="navbar__playlist__playlistName"
+                >Nome Playlist</a
+              >
+            </li>
+            <li>
+              <a href="#" class="navbar__playlist__playlistName"
+                >Nome Playlist</a
+              >
+            </li>
+            <li>
+              <a href="#" class="navbar__playlist__playlistName"
+                >Nome Playlist</a
+              >
+            </li>
+            <li>
+              <a href="#" class="navbar__playlist__playlistName"
+                >Nome Playlist</a
+              >
+            </li>
+            <li>
+              <a href="#" class="navbar__playlist__playlistName"
+                >Nome Playlist</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- navbar user -->
+        <div class="navbar__user">
+          <a href="#" class="navbar__user__downloadApp block">
+            <img
+              src="./assets/img/download.svg"
+              alt=""
+              class="navbar__icon" /><span>Installa App</span>
+          </a>
+          <div class="navbar__user__profile">
+            <div class="--rounded-frame">
+              <img src="./assets/img/profile.svg" alt="" class="navbar__icon" />
+            </div>
+            <span class="navbar__user__profile__name">pincopallo86</span>
+          </div>
+        </div>
       </nav>
       <main id="main">
         <header id="notifications"></header>
