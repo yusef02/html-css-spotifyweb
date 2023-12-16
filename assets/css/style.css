@@ -7,7 +7,8 @@
   --xxl-size: 100px;
   --xxl-size: 120px;
 
-  --fixed-sections-height: 100px;
+  --fixed-sections-height: 90px;
+  --side-navbar-size: 230px;
 }
 
 /* RESET */
@@ -15,6 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* debug */
@@ -30,6 +32,9 @@ w--100 {
 }
 h--100 {
   height: 100%;
+}
+.--text-small {
+  font-size: 0.8rem;
 }
 .block {
   display: block;
@@ -49,6 +54,20 @@ h--100 {
   object-fit: cover;
   object-position: center;
 }
+.--square-frame {
+  width: 100%;
+  height: 100%;
+  line-height: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+.--square-frame > * {
+  width: 100%;
+  aspect-ratio: 1;
+  vertical-align: middle;
+  object-fit: cover;
+  object-position: center;
+}
 
 /****** WINDOW APP *******/
 
@@ -56,7 +75,7 @@ h--100 {
   width: 100%;
   height: 100vh;
   display: flex;
-  color: white;
+  color: rgba(255, 255, 255, 0.6);
   background-color: #141922;
 }
 
@@ -64,13 +83,13 @@ h--100 {
 
 #navbar {
   background-color: #000000;
-  width: 15%;
+  width: var(--side-navbar-size);
   height: calc(100% - var(--fixed-sections-height));
-  padding: 0 var(--s-size);
+  padding: 0 var(--base-size);
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  overflow: auto;
+  overflow: hidden;
 }
 #navbar .navbar__playlist {
   flex-grow: 1;
@@ -80,8 +99,11 @@ h--100 {
   margin-right: 0.5rem;
 }
 #navbar a {
-  color: white;
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
+}
+#navbar a:hover {
+  color: white;
 }
 .navbar__linkTo,
 .navbar__playlist {
@@ -111,16 +133,23 @@ h--100 {
 }
 
 /* navbar playlist */
+
+/* TODO: aggiustare il overflow della navbar  */
+.navbar__playlist {
+  overflow: hidden;
+}
 .navbar__playlist > * {
   margin-bottom: var(--base-size);
 }
-.navbar__playlist__createPlaylist::before {
+.navbar__playlist__title {
+  color: white;
+}
+.navbar__playlist__createPlaylist span::before {
   content: "+";
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: 2.5rem;
   display: inline-block;
   color: #000000;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
   width: 3rem;
   height: 3rem;
   line-height: 3rem;
@@ -128,7 +157,13 @@ h--100 {
   vertical-align: middle;
   margin-right: 0.5rem;
 }
+.navbar__playlist__createPlaylist:hover span::before {
+  background-color: white;
+}
 .navbar__playlist__list {
+  overflow: auto;
+}
+.navbar__playlist__list ul {
   list-style: none;
 }
 .navbar__playlist__list li {
@@ -136,7 +171,6 @@ h--100 {
 }
 .navbar__playlist__playlistName {
   text-decoration: none;
-  color: white;
 }
 
 /* navbar user */
@@ -159,18 +193,19 @@ h--100 {
 .navbar__user__profile .--rounded-frame {
   width: 2rem;
   height: 2rem;
-  background-color: #282828;
+  background-color: rgba(255, 255, 255, 0.6);
   display: inline-block;
   margin-right: 0.5rem;
 }
 .navbar__user__profile__name {
   font-weight: 700;
+  color: white;
 }
 
 /******* MAIN *******/
 
 #main {
-  width: 85%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -199,9 +234,165 @@ h--100 {
 
 /******* NAV PLAYER *******/
 #player {
+  color: rgba(255, 255, 255, 0.6);
   background-color: #282828;
   position: fixed;
   bottom: 0;
   width: 100%;
   height: var(--fixed-sections-height);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.player__song,
+.player__settings,
+.player__controls {
+  padding: 10px;
+}
+
+.player__song,
+.player__settings {
+  width: var(--side-navbar-size);
+  display: flex;
+  align-items: center;
+}
+
+/* player song */
+.player__song .player__song__cover.--square-frame {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.player__song a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  margin-right: 10px;
+}
+.player__song a:hover {
+  color: white;
+  text-decoration: underline;
+}
+.player__song .player__song__name {
+  color: white;
+}
+.player__song__icon {
+  margin-right: 10px;
+  cursor: pointer;
+}
+.player__song__icon:hover {
+  color: white;
+}
+
+/* player controls */
+.player__controls {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--base-size);
+}
+.player__controls__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--s-size);
+}
+.player__controls__buttons i {
+  font-size: 1.3rem;
+  color: white;
+  cursor: pointer;
+}
+.player__controls__buttons .fa-regular.fa-circle-play {
+  font-size: 2rem;
+}
+/* .player__controls__buttons .fa-regular.fa-circle-play:hover {
+  font-size: 2.5rem;
+} */
+
+.player__controls__progressBar {
+  display: flex;
+  align-items: center;
+  gap: var(--m-size);
+}
+.player__controls__progressBar__bar {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+.player__controls__progressBar__bar__progress {
+  width: 25%;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  /* display: none; */
+}
+.player__controls__progressBar__bar:hover
+  .player__controls__progressBar__bar__progress {
+  display: block;
+  background-color: red;
+  /* background-color: #adff2f; */
+}
+.player__controls__progressBar__bar:hover
+  .player__controls__progressBar__bar__progress::after {
+  content: " ";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* player settings */
+.player__settings__icon {
+  margin-right: var(--base-size);
+  cursor: pointer;
+}
+.player__settings__icon:hover {
+  color: white;
+}
+.player__settings__progressBar__bar {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+.player__settings__progressBar__bar__progress {
+  width: 70%;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  /* display: none; */
+}
+.player__settings__progressBar__bar:hover
+  .player__settings__progressBar__bar__progress {
+  display: block;
+  background-color: red;
+  /* background-color: #adff2f; */
+}
+.player__settings__progressBar__bar:hover
+  .player__settings__progressBar__bar__progress::after {
+  content: " ";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
