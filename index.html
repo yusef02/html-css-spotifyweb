@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify Web</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/img/favicon.ico"
+      type="image/x-icon" />
 
     <!-- link font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,9 +16,6 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap"
       rel="stylesheet" />
 
-    <!-- link stylesheet -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-
     <!-- link fontawesome stylesheet -->
     <link
       rel="stylesheet"
@@ -22,6 +23,12 @@
       integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer" />
+
+    <!-- link stylesheet -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- link responsive stylesheet -->
+    <!-- <link rel="stylesheet" href="./assets/css/responsive.css" /> -->
   </head>
   <body>
     <div class="windowApp">
@@ -30,6 +37,10 @@
         <!-- navbar logo -->
         <a href="#" class="navbar__logo block">
           <img src="./assets/img/logo.svg" alt="logo" class="logo" />
+          <img
+            src="./assets/img/logo-small.svg"
+            alt="logo"
+            class="logo--small" />
         </a>
 
         <!-- navbar link to -->
@@ -110,56 +121,6 @@
                   Nome Playlist
                 </a>
               </li>
-              <li>
-                <a href="#" class="navbar__playlist__playlistName">
-                  Nome Playlist
-                </a>
-              </li>
-              <li>
-                <a href="#" class="navbar__playlist__playlistName">
-                  Nome Playlist
-                </a>
-              </li>
-              <li>
-                <a href="#" class="navbar__playlist__playlistName">
-                  Nome Playlist
-                </a>
-              </li>
-              <li>
-                <a href="#" class="navbar__playlist__playlistName">
-                  Nome Playlist
-                </a>
-              </li>
-              <li>
-                <a href="#" class="navbar__playlist__playlistName">
-                  Nome Playlist
-                </a>
-              </li>
-              <li>
-                <a href="#" class="navbar__playlist__playlistName">
-                  Nome Playlist
-                </a>
-              </li>
-              <li>
-                <a href="#" class="navbar__playlist__playlistName">
-                  Nome Playlist
-                </a>
-              </li>
-              <li>
-                <a href="#" class="navbar__playlist__playlistName">
-                  Nome Playlist
-                </a>
-              </li>
-              <li>
-                <a href="#" class="navbar__playlist__playlistName">
-                  Nome Playlist
-                </a>
-              </li>
-              <li>
-                <a href="#" class="navbar__playlist__playlistName">
-                  Nome Playlist
-                </a>
-              </li>
             </ul>
           </div>
         </div>
@@ -179,8 +140,128 @@
         </div>
       </nav>
       <main id="main">
-        <header id="notifications"></header>
-        <div id="mainContent"></div>
+        <header id="notifications">
+          <button class="notifications__btnUpgrade">EFFETUA L'UPGRADE</button>
+        </header>
+        <div id="mainContent">
+          <nav class="mainContent__nav">
+            <ul>
+              <li><a href="#">IN EVIDENZA</a></li>
+              <li><a href="#">PODCAST</a></li>
+              <li><a href="#">CLASSIFICHE</a></li>
+              <li><a href="#">GENERI E MOOD</a></li>
+              <li><a href="#">NUOVE USCITE</a></li>
+              <li><a href="#">SCOPRI</a></li>
+            </ul>
+          </nav>
+          <section id="sectionRecent">
+            <div class="container">
+              <h2 class="section__title">Recently played</h2>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col--1-6 item">
+                  <div class="--square-frame">
+                    <img
+                      src="./assets/img/metal_lifting.jpg"
+                      class="item__image" />
+                  </div>
+                  <h3 class="item__title">nome canzone</h3>
+                  <span class="block item__author --text-small">autore</span>
+                </div>
+                <div class="col--1-6 item">
+                  <div class="--square-frame">
+                    <img src="./assets/img/stranger.jpeg" class="item__image" />
+                  </div>
+                  <h3 class="item__title">nome canzone</h3>
+                  <span class="block item__author --text-small">autore</span>
+                </div>
+                <div class="col--1-6 item">
+                  <div class="--square-frame">
+                    <img
+                      src="./assets/img/aquietplace.jpeg"
+                      class="item__image" />
+                  </div>
+                  <h3 class="item__title">nome canzone</h3>
+                  <span class="block item__author --text-small">autore</span>
+                </div>
+                <div class="col--1-6 item">
+                  <div class="--square-frame">
+                    <img src="./assets/img/split.jpeg" class="item__image" />
+                  </div>
+                  <h3 class="item__title">nome canzone</h3>
+                  <span class="block item__author --text-small">autore</span>
+                </div>
+                <div class="col--1-6 item">
+                  <div class="--square-frame">
+                    <img src="./assets/img/cure.jpeg" class="item__image" />
+                  </div>
+                  <h3 class="item__title">nome canzone</h3>
+                  <span class="block item__author --text-small">autore</span>
+                </div>
+                <div class="col--1-6 item">
+                  <div class="--square-frame">
+                    <img src="./assets/img/sinister.jpeg" class="item__image" />
+                  </div>
+                  <h3 class="item__title">nome canzone</h3>
+                  <span class="block item__author --text-small">autore</span>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="sectionCreated">
+            <div class="container">
+              <h2 class="section__title">Creato per pincopallo86</h2>
+              <span class="block section__desc --text-small"
+                >più ascolti, più i suggerimenti saranno accurati</span
+              >
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col--1-6 item">
+                  <div class="--square-frame">
+                    <img src="./assets/img/radar.jpeg" class="item__image" />
+                  </div>
+                  <h3 class="item__title">Relese radar</h3>
+                  <!-- <span class="block item__author --text-small">autore</span> -->
+                </div>
+                <div class="col--1-6 item">
+                  <div class="--square-frame">
+                    <img src="./assets/img/mixdaily.jpeg" class="item__image" />
+                  </div>
+                  <h3 class="item__title">Daily mix</h3>
+                  <!-- <span class="block item__author --text-small">autore</span> -->
+                </div>
+              </div>
+            </div>
+          </section>
+          <section id="sectionPopular">
+            <div class="container">
+              <h2 class="section__title">Artisti più popolari</h2>
+              <span class="block section__desc --text-small"
+                >più ascolti, più i suggerimenti saranno accurati</span
+              >
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col--1-6 item">
+                  <div class="--rounded-frame">
+                    <img src="./assets/img/youg.jpeg" class="item__image" />
+                  </div>
+                  <h3 class="item__title">Lana del Rey</h3>
+                  <!-- <span class="block item__author --text-small">autore</span> -->
+                </div>
+                <div class="col--1-6 item">
+                  <div class="--rounded-frame">
+                    <img src="./assets/img/einaudi.jpeg" class="item__image" />
+                  </div>
+                  <h3 class="item__title">ludovico Einaudi</h3>
+                  <!-- <span class="block item__author --text-small">autore</span> -->
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
       </main>
       <nav id="player">
         <div class="player__song">

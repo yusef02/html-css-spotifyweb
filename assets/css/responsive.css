@@ -1,0 +1,85 @@
+@media screen and (max-width: 878px) {
+  /* main content */
+  #mainContent .col--1-6 {
+    width: calc(100% / 4);
+    min-width: 0;
+  }
+}
+
+@media screen and (max-width: 638px) {
+  /* NAVBAR */
+  #navbar {
+    /* flex: 1 0 230px; */
+    --side-navbar-size: 230px;
+    /* width: var(--side-navbar-size); */
+  }
+  .navbar__logo .logo {
+    height: var(--m-size);
+  }
+
+  /* MAIN */
+  /* main header */
+  #notifications {
+    --side-navbar-size: 230px;
+    left: var(--side-navbar-size);
+  }
+
+  /* main content */
+  #mainContent .col--1-6 {
+    width: 50% !important;
+    min-width: 0;
+  }
+}
+
+@media screen and (max-width: 552px) {
+  /* NAVBAR */
+  #navbar {
+    --side-navbar-size: 70px !important;
+    /* width: var(--side-navbar-size); */
+    padding: 0 var(--base-size);
+  }
+  .navbar__logo .logo {
+    display: none;
+  }
+  .navbar__logo .logo--small {
+    display: inline-block;
+  }
+
+  .navbar__linkTo span,
+  .navbar__playlist,
+  .navbar__user span {
+    display: none;
+  }
+  .navbar__linkTo {
+    flex-grow: 1;
+  }
+  .navbar__linkTo__home:hover::before,
+  .navbar__linkTo__search:hover::before,
+  .navbar__linkTo__library:hover::before {
+    left: calc(-1 * var(--base-size));
+  }
+  .navbar__user__downloadApp {
+    border: none;
+  }
+
+  /* MAIN */
+  /* main header */
+  #notifications {
+    --side-navbar-size: 70px;
+    width: calc(100% - var(--side-navbar-size));
+  }
+  /* main content */
+  #mainContent .col--1-6 {
+    width: 50% !important;
+    min-width: 0;
+  }
+
+  /* PLAYER */
+  .player__controls {
+    flex-grow: 1;
+  }
+  .player__controls__progressBar,
+  .player__settings {
+    display: none;
+  }
+}
